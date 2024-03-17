@@ -28,5 +28,5 @@ output "random_password" {
 }
 
 output "random_number" {
-  value = 42  # Define a specific number
+  value = 41  # Define a specific number
 }
