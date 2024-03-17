@@ -5,7 +5,7 @@ provider "null" {
 
 # Define pet names
 resource "null_resource" "pet" {
-  count = 5  # Change the count to generate more or fewer resources
+  count = 6  # Change the count to generate more or fewer resources
 }
 
 # Define strings
