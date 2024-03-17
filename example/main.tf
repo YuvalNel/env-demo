@@ -1,35 +1,32 @@
 # Provider configuration
-provider "random" {
-  version = "~> 3.1"
+provider "null" {
+  version = "~> 3.0"
 }
 
 # Define pet names
-resource "random_pet" "pet" {
-  length = 4
-  separator = "-"
+resource "null_resource" "pet" {
+  count = 5  # Change the count to generate more or fewer resources
 }
 
 # Define strings
-resource "random_string" "password" {
-  length  = 16
-  special = true
+resource "null_resource" "password" {
+  count = 1
 }
 
 # Define integers
-resource "random_integer" "number" {
-  min = 1
-  max = 100
+resource "null_resource" "number" {
+  count = 1
 }
 
 # Output defined values
 output "random_pets" {
-  value = random_pet.pet.*.id
+  value = null_resource.pet[*].id
 }
 
 output "random_password" {
-  value = random_string.password.result
+  value = "This is a password"  # Define a specific password
 }
 
 output "random_number" {
-  value = random_integer.number.result
+  value = 42  # Define a specific number
 }
